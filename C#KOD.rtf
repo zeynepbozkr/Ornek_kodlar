@@ -1,0 +1,1188 @@
+{\rtf1\ansi\ansicpg1254\deff0\nouicompat\deflang1055{\fonttbl{\f0\fnil\fcharset162 Calibri;}{\f1\fnil\fcharset0 Calibri;}{\f2\fnil\fcharset238 Calibri;}{\f3\fnil\fcharset0 Courier New;}{\f4\fnil\fcharset238 Courier New;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22 ***************************************************************************\par
+                                                               HAFTA6\par
+**************************************************************************\f1\lang31\par
+\par
+\par
+using System;\par
+using System.Collections.Generic;\par
+using System.ComponentModel;\par
+using System.Data;\par
+using System.Drawing;\par
+using System.Linq;\par
+using System.Text;\par
+using System.Threading.Tasks;\par
+using System.Windows.Forms;\par
+\par
+namespace HAFTA6\par
+\{\par
+    public partial class Form1 : Form\par
+    \{\par
+        public Form1()\par
+        \{\par
+            InitializeComponent();\par
+        \}\par
+\par
+        private void label1_Click(object sender, EventArgs e)\par
+        \{\par
+\par
+        \}\par
+\par
+        private void button2_Click(object sender, EventArgs e)\par
+        \{\par
+            textBox1.Text = "0";\par
+            textBox2.Text = "0";\par
+            //di\f2\u287?er y\f1\lang1033\'f6nemler\par
+           //textBox1.Text = "";\par
+          //  textBox1.Clear;\par
+\par
+        \}\par
+\par
+        private void button1_Click(object sender, EventArgs e)\par
+        \{\par
+            // bunu da kullanabiliriz di\f2\u287?erini de\par
+            //label1.Text = Hesapla(Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text)).ToString();\par
+\par
+            //convert t\f1\'fcr de\f2\u287?i\'baimi yap\u305?yor\par
+\par
+            Hesapla2(Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text));\par
+\par
+        \}\par
+        public double Hesapla(int a, int b)\par
+        \{\par
+            double deger = Math.Pow(a, b);\par
+            return deger;\par
+        \}\par
+        public void Hesapla2(int a, int b)\par
+        \{\par
+            double deger = Math.Pow(a, b);\par
+            label1.Text = deger.ToString();\par
+        \}\par
+\par
+        private void button3_Click(object sender, EventArgs e)\par
+        \{\par
+            textBox1.Enabled = false;\par
+            // butonun aktif olup olmayca\u287?\u305?n\u305? belirleriz\par
+        \}\par
+\par
+        private void button4_Click(object sender, EventArgs e)\par
+        \{\par
+            textBox1.Visible = false;\par
+            //g\f1\'f6\'fcn\'fcrl\'fck\par
+\par
+        \}\par
+    \}\par
+\}\par
+\par
+\par
+\par
+\f0\lang1055 ***************************************************************************\par
+                                                               HAFTA7\par
+**************************************************************************\par
+\par
+using System;\par
+using System.Collections.Generic;\par
+using System.ComponentModel;\par
+using System.Data;\par
+using System.Drawing;\par
+using System.Linq;\par
+using System.Text;\par
+using System.Threading.Tasks;\par
+using System.Windows.Forms;\par
+\par
+namespace Hafta7\par
+\{\par
+    public partial class Form1 : Form\par
+    \{\par
+        public Form1()\par
+        \{\par
+            InitializeComponent();\par
+            comboBox1.SelectedIndex = 0;\par
+            listBox1.SelectedIndex = 2;\par
+            // hangi degerden dan ba\f2\'balamas\u305? i\f1\lang1033\'e7in\par
+\par
+           // PropertiesTEN COMBOX DROPDOWNL\f2\u304?ST EKLERSEK DE\u286?\u304?\'aa\u304?KL\u304?K YAPAMAZ\par
+        \}\par
+\par
+        private void button1_Click(object sender, EventArgs e)\par
+        \{\par
+            listBox1.Items.Add(textBox1.Text);\par
+            comboBox1.Items.Add(textBox1.Text);\par
+        \}\par
+\par
+        private void button2_Click(object sender, EventArgs e)\par
+        \{\par
+\par
+            listBox1.Items.Clear();\par
+        \}\par
+\par
+        private void button3_Click(object sender, EventArgs e)\par
+        \{\par
+            listBox1.Items.Insert(1, textBox1.Text);\par
+            //araya ekleme 1:indis :eklenecek de\u287?er\par
+        \}\par
+\par
+        private void button4_Click(object sender, EventArgs e)\par
+        \{\par
+            listBox1.Items.RemoveAt(0);\par
+            \par
+        \}\par
+\par
+        private void button5_Click(object sender, EventArgs e)\par
+        \{\par
+            listBox1.Items.Remove("hHATAY");\par
+        \}\par
+\par
+        private void label2_Click(object sender, EventArgs e)\par
+        \{\par
+\par
+        \}\par
+\par
+        private void button6_Click(object sender, EventArgs e)\par
+        \{\par
+            label2.Text = listBox1.Items.Count.ToString();\par
+            \par
+        \}\par
+\par
+        private void button7_Click(object sender, EventArgs e)\par
+        \{\par
+            label3.Text = listBox1.Items.IndexOf(textBox1.Text).ToString();\par
+\par
+            //textboxtaki ifadenin nerde oldu\u287?unu g\f1\'f6sterme\par
+        \}\par
+\par
+        private void button8_Click(object sender, EventArgs e)\par
+        \{\par
+            MessageBox.Show(listBox1.SelectedIndex.ToString());\par
+            //ka\'e7\f2\u305?nc\u305? indis se\f1\'e7ilmi\f2\'ba\par
+            MessageBox.Show(listBox1.SelectedItem.ToString());\par
+            //hangi item se\f1\'e7ilmi\f2\'ba\par
+            MessageBox.Show(listBox1.Items[1].ToString());\par
+            //1. indisteki item getirme\par
+            MessageBox.Show(comboBox1.Text);\par
+\par
+            for(int i=0; i < listBox1.Items.Count; i++)\par
+            \{\par
+                MessageBox.Show(listBox1.Items[i].ToString());\par
+            \}\par
+        \}\par
+    \}\par
+\}\par
+\f0\lang1055 *******************************************************\par
+\f1\lang31 using System;\par
+using System.Collections.Generic;\par
+using System.ComponentModel;\par
+using System.Data;\par
+using System.Drawing;\par
+using System.Linq;\par
+using System.Text;\par
+using System.Threading.Tasks;\par
+using System.Windows.Forms;\par
+\par
+namespace Hafta7\par
+\{\par
+    public partial class Form2 : Form\par
+    \{\par
+        public Form2()\par
+        \{\par
+            InitializeComponent();\par
+        \}\par
+\par
+        private void button1_Click(object sender, EventArgs e)\par
+        \{\par
+            if (checkBox1.Checked)\par
+            \{\par
+                MessageBox.Show("checkboks1 se\'e7ildi");\par
+            \}\par
+            else\par
+            \{\par
+                MessageBox.Show("checkboks1 se\'e7ilmedi");\par
+            \}\par
+\par
+\par
+            if (radioButton1.Checked)\par
+            \{\par
+                MessageBox.Show("radiobutton1 se\'e7ildi");\par
+            \}\par
+            else\par
+            \{\par
+                MessageBox.Show("radiobutton se\'e7ilmedi");\par
+            \}\par
+\par
+        \}\par
+\par
+        private void button2_Click(object sender, EventArgs e)\par
+        \{\par
+            if (checkBox1.Checked)\par
+            \{\par
+          \par
+                checkBox1.Checked = false;\par
+            \}\par
+            else\par
+            \{\par
+                checkBox1.Checked = true; ;\par
+\par
+            \}\par
+\par
+\par
+            if (radioButton1.Checked)\par
+            \{\par
+\par
+                radioButton1.Checked = false;\par
+            \}\par
+            else\par
+            \{\par
+                radioButton1.Checked = true;\par
+            \}\par
+        \}\par
+\par
+        private void button3_Click(object sender, EventArgs e)\par
+        \{\par
+            radioButton1.Text = "de\f2\u287?i\'batir";\par
+        \}\par
+\par
+        private void button4_Click(object sender, EventArgs e)\par
+        \{\par
+            Form1 a = new Form1();\par
+            a.Show();\par
+            //showda ekran a\f1\lang1033\'e7\f2\u305?k kal\u305?r yeni bir tane daha a\f1\'e7ar\f2\u305?z\par
+            // a.ShowDialog();\par
+            //ekran kapat\u305?l\u305?r ndan sonra yenisi a\f1\'e7\f2\u305?labiliri\par
+\par
+\par
+            // \f1\'e7\'f6z\'fcm gezgini programcs den\par
+            //Application.Run(new Form2());  hangi form \'e7al\f2\u305?\'baacaksa onu yaz\u305?yoruz\par
+        \}\par
+    \}\par
+\}\f1\lang31\par
+\f0\lang1055 ***************************************************************************\par
+                                                               HAFTA8\par
+**************************************************************************\par
+\f1\lang1033 using System;\par
+using System.Collections.Generic;\par
+using System.ComponentModel;\par
+using System.Data;\par
+using System.Drawing;\par
+using System.Linq;\par
+using System.Text;\par
+using System.Threading.Tasks;\par
+using System.Windows.Forms;\par
+\par
+namespace Hafta8\par
+\{\par
+    public partial class Form1 : Form\par
+    \{\par
+        public Form1()\par
+        \{\par
+            InitializeComponent();\par
+        \}\par
+\par
+        private void panel4_Paint(object sender, PaintEventArgs e)\par
+        \{\par
+\par
+        \}\par
+\par
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)\par
+        \{\par
+\par
+        \}\par
+\par
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)\par
+        \{\par
+\par
+        \}\par
+        // Contextmenu eklndi: sa\f2\u287?a t\u305?klan\u305?nca\par
+        //menu sprit eklendi dosya d\f1\'fczen;\par
+\par
+        //splitterconteiner dock i\f2\'balmeni kendi yapt\u305?\par
+\par
+\par
+    \}\par
+\}\par
+\f0\lang1055 ******************************************************************\par
+using System;\par
+using System.Collections.Generic;\par
+using System.ComponentModel;\par
+using System.Data;\par
+using System.Drawing;\par
+using System.Linq;\par
+using System.Text;\par
+using System.Threading.Tasks;\par
+using System.Windows.Forms;\par
+\par
+namespace Hafta8\par
+\{\par
+    public partial class Form2 : Form\par
+    \{\par
+        public Form2()\par
+        \{\par
+            //pictureBox1.Image = Image.FromFile("c:{{\field{\*\fldinst{HYPERLINK "\\\\\\\\resim"}}{\fldrslt{\\\\resim\ul0\cf0}}}}\f0\fs22  adresi");\par
+            //  pictureBox1.Image = Image.FromFile("@c:\\resim adresi");\par
+\par
+            // pictureBox1.Image = Image.FromFile("resim yeri.png");\par
+            //t\f1\lang1033\'fcm bilgisayrlarda \'e7al\f2\u305?\'bamas\u305? i\f1\'e7in exenin yan\f2\u305?na  aktar\u305?l\u305?r ve b\f1\'f6yle yap\f2\u305?lur\par
+\par
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;\par
+            //atamalar\u305? b\f1\'f6yle de yapabiliriz\par
+\par
+        \}\par
+\par
+        //resim eklemesi yap\f2\u305?ld\u305?:image ile size mode ile de boyutunu zoom yapt\u305?k\par
+        //image list ile butona ekleme yapt\u305?k index se\f1\'e7ilmeli mutlaka\par
+\par
+\par
+    \}\par
+\}\par
+\f0\lang1055 ***************************************************************************\par
+                                                               HAFTA9**************************************************************************\par
+\par
+using System;\par
+using System.Collections.Generic;\par
+using System.ComponentModel;\par
+using System.Data;\par
+using System.Drawing;\par
+using System.Linq;\par
+using System.Text;\par
+using System.Threading.Tasks;\par
+using System.Windows.Forms;\par
+\par
+namespace Hafta9\par
+\{\par
+    public partial class Form1 : Form\par
+    \{\par
+        public Form1()\par
+        \{\par
+            InitializeComponent();\par
+        \}\par
+\par
+        private void textBox1_TextChanged(object sender, EventArgs e)\par
+        \{\par
+\par
+        \}\par
+\par
+        private void programdan\f1\lang1033\'c7\f2\u305?kToolStripMenuItem_Click(object sender, EventArgs e)\par
+        \{\par
+            Application.Exit();\par
+        \}\par
+\par
+        private void button1_Click(object sender, EventArgs e)\par
+        \{\par
+            //this.Hide();         //gizler\par
+            //this.Close();     //kapat\u305?r\par
+\par
+           \par
+            if (timer1.Enabled == true)\par
+            \{\par
+                timer1.Enabled = false;\par
+                button1.Text = "timer ba\'balat";\par
+\par
+            \}\par
+            else \par
+            \{\par
+                timer1.Enabled = true;\par
+                button1.Text = "timer durdur";\par
+            \}\par
+\par
+        \}\par
+\par
+        private void timer1_Tick(object sender, EventArgs e)\par
+        \{\par
+            label1.Text = System.DateTime.Now.ToLongTimeString();\par
+\par
+            pictureBox1.Location = new Point(pictureBox1.Location.X , pictureBox1.Location.Y-10);\par
+            //timer hareket ettik\f1\'e7e ynin \f2\'bauanki konumundan10 yukar\u305? \f1\'e7\f2\u305?kar \par
+            //-10 yapmam\u305?z formun \f1\'fcst sa\f2\u287? k\u305?sm\u305? 0.0 noktas\u305?\par
+        \par
+        \}\par
+\par
+        private void button2_Click(object sender, EventArgs e)\par
+        \{\par
+            progressBar1.Value -= 5;\par
+            //Thread ile kullan\u305?m\par
+        \}\par
+\par
+        private void button2_MouseClick(object sender, MouseEventArgs e)\par
+        \{\par
+            //mouse t\u305?kland\u305?\u287?\u305? an\par
+            MessageBox.Show("mouse t\u305?kland\u305?");\par
+        \}\par
+\par
+        private void button2_MouseDown(object sender, MouseEventArgs e)\par
+        \{\par
+            //mouse t\u305?klan\u305?p kald\u305?r\u305?lmadan\par
+            //MessageBox.Show("mouset\u305?kland\u305? b\u305?rak\u305?lmad\u305?");\par
+        \}\par
+\par
+        private void button2_MouseUp(object sender, MouseEventArgs e)\par
+        \{\par
+            //mouse t\u305?klan\u305?p kald\u305?r\u305?ld\u305?\u287?\u305?nda\par
+            MessageBox.Show("mouse t\u305?kland\u305? ve b\u305?rak\u305?ld\u305? ");\par
+        \}\par
+\par
+        private void button2_MouseHover(object sender, EventArgs e)\par
+        \{\par
+            //mouse \f1\'fczerinden ge\'e7ildi\f2\u287?inde\par
+            //MessageBox.Show("mouse\f1\'fczerinden ge\'e7ti ");\par
+        \}\par
+\par
+        private void button2_TextChanged(object sender, EventArgs e)\par
+        \{\par
+            label1.Text = textBox1.Text;\par
+            //text boxa yaz\f2\u305?lan her \'baeyi  an\u305?nda labeli yazma\par
+        \}\par
+    \}\par
+\}\par
+\f0\lang1055 ************************************************\par
+using System;\par
+using System.Collections.Generic;\par
+using System.ComponentModel;\par
+using System.Data;\par
+using System.Drawing;\par
+using System.Linq;\par
+using System.Text;\par
+using System.Threading.Tasks;\par
+using System.Windows.Forms;\par
+\par
+namespace Hafta9\par
+\{\par
+    public partial class Form2 : Form\par
+    \{\par
+        public Form2()\par
+        \{\par
+            InitializeComponent();\par
+        \}\par
+        PictureBox resim = new PictureBox();\par
+        private void Form2_Load(object sender, EventArgs e)\par
+        \{\par
+           \par
+            resim.Name = "resim";\par
+            resim.Width = 20;\par
+            resim.Height = 40;\par
+            //resim.Image = Image.FromFile("resim.png");\par
+            //backraund olarak at\f2\u305?yoruz\par
+            resim.BackgroundImage = Image.FromFile("resim.png");\par
+            resim.BackgroundImageLayout = ImageLayout.Stretch;\par
+            //boyutunu ayarlamak i\f1\lang1033\'e7in strech\par
+\par
+            resim.BackColor = Color.Transparent;\par
+            resim.Location = new Point(50, 50);\par
+\par
+\par
+            this.Controls.Add(resim);\par
+            //olu\f2\'baturulan bile\'baenleri eklemek\par
+           // this.Controls.Remove(resim);     // silme\par
+           // resim.Dispose();                // ramden tamamen silme\par
+\par
+\par
+        \}\par
+\par
+        private void Form2_MouseMove(object sender, MouseEventArgs e)\par
+        \{\par
+            //mouse nereye giderse resimide oraya g\f1\'f6tr\'fcme\par
+            resim.Location = new Point(e.Location.X-10, e.Location.Y-20);\par
+\par
+        \}\par
+    \}\par
+\}\par
+\par
+\f0\lang1055 ***************************************************************************\par
+                                                               HAFTA10**************************************************************************\par
+using System;\par
+using System.Collections.Generic;\par
+using System.ComponentModel;\par
+using System.Data;\par
+using System.Drawing;\par
+using System.Linq;\par
+using System.Text;\par
+using System.Threading.Tasks;\par
+using System.Windows.Forms;\par
+\par
+namespace Hafta10\par
+\{\par
+    public partial class Form1 : Form\par
+    \{\par
+        public Form1()\par
+        \{\par
+            InitializeComponent();\par
+        \}\par
+\par
+        private void label1_Click(object sender, EventArgs e)\par
+        \{\par
+\par
+        \}\par
+\par
+        private void textBox1_Validated(object sender, EventArgs e)\par
+        \{\par
+            //texboxtan \f1\lang1033\'e7\f2\u305?kt\u305?ktan sornra yan\u305?nd hata verir\par
+          //  errorProvider1 ile yan\u305?ndak\u305?rm\u305?z\u305? i\'baaret vermesi \par
+            \par
+            if (textBox1.Text.Trim() == "")\par
+            \{\par
+                errorProvider1.SetError(textBox1, "ad bo\'ba b\u305?rak\u305?lmaz");\par
+            \}\par
+            else\par
+            \{\par
+                errorProvider1.SetError(textBox1, "");\par
+\par
+            \}\par
+        \}\par
+\par
+        private void textBox1_Validating(object sender, CancelEventArgs e)\par
+        \{\par
+            //  textbox \par
+\par
+            if (textBox1.Text.Trim() == "")\par
+            \{\par
+                errorProvider1.SetError(textBox1, "ad bo\'ba b\u305?rak\u305?lmaz");\par
+            \}\par
+            else\par
+            \{\par
+                errorProvider1.SetError(textBox1, "");\par
+\par
+            \}\par
+        \}\par
+\par
+        private void button2_Click(object sender, EventArgs e)\par
+        \{\par
+            MessageBox.Show("programdan \f1\'e7\f2\u305?k\u305?\'ba yap\u305?ld\u305?");\par
+        \}\par
+\par
+        private void button1_Click(object sender, EventArgs e)\par
+        \{\par
+            MessageBox.Show("kay\u305?t tamamland\u305?");\par
+        \}\par
+\par
+        private void Form1_Load(object sender, EventArgs e)\par
+        \{\par
+            //button1.Visible = false;\par
+           // button2.Visible = false;\par
+            //g\f1\'f6r\'fcn\'fcrl\'fck yokde\f2\u287?erlerini g\f1\'f6remiyoruz\par
+        \}\par
+\par
+        private void button3_Click(object sender, EventArgs e)\par
+        \{\par
+            Form2 a = new Form2();\par
+           \par
+          //  a.MdiParent = this;\par
+            //ana form bu olmas\f2\u305?\par
+            a.Show();\par
+\par
+        \}\par
+\par
+        private void button4_Click(object sender, EventArgs e)\par
+        \{\par
+            Form2 b = new Form2();\par
+            b.kuladi = textBox1.Text;\par
+\par
+            b.Show();\par
+        \}\par
+    \}\par
+\}\par
+\f0\lang1055 ****************************************************************\par
+using System;\par
+using System.Collections.Generic;\par
+using System.ComponentModel;\par
+using System.Data;\par
+using System.Drawing;\par
+using System.Linq;\par
+using System.Text;\par
+using System.Threading.Tasks;\par
+using System.Windows.Forms;\par
+\par
+namespace Hafta10\par
+\{\par
+    public partial class Form2 : Form\par
+    \{\par
+        public Form2()\par
+        \{\par
+            InitializeComponent();\par
+        \}\par
+\par
+      \par
+\par
+        public string kuladi\{ get; set; \}\par
+        private void Form2_Load(object sender, EventArgs e)\par
+        \{\par
+            label3.Text = kuladi;\par
+\par
+        \}\par
+    \}\par
+\}\par
+***************************************************************************\par
+                                                               HAFTA11**************************************************************************\par
+using System;\par
+using System.Collections.Generic;\par
+using System.ComponentModel;\par
+using System.Data;\par
+using System.Drawing;\par
+using System.Linq;\par
+using System.Text;\par
+using System.Threading.Tasks;\par
+using System.Windows.Forms;\par
+\par
+namespace Hafta11\par
+\{\par
+    public partial class Form1 : Form\par
+    \{\par
+        public Form1()\par
+        \{\par
+            InitializeComponent();\par
+        \}\par
+\par
+        private void button1_Click(object sender, EventArgs e)\par
+        \{\par
+            OpenFileDialog file = new OpenFileDialog();\par
+            //  file.Filter = "Excel Dosylari | *.xsls | Excel Dosyasi\f2  |*.xlxs";\par
+            //excel dosyalar\u305?n\u305?n g\f1\lang1033\'f6r\'fcnmesini istitoruz\par
+\par
+            file.Filter = "Resimler(jpg,png,gif) | *.jpg; *.jprg;*.png;*.gif";\par
+            //\f0\lang1055    \f1\lang1033 *. yazmam\f2\u305?z gerekiyor dosya adlar\u305? belirtmek i\f1\'e7in\par
+\par
+            file.RestoreDirectory = true;\par
+            // dosyalarda kald\f2\u305?\u287?\u305?n yerden devam etmek \par
+\par
+            file.Multiselect = true;\par
+            // birden fazla dosya se\f1\'e7mek i\'e7in \par
+            if (file.ShowDialog() == DialogResult.OK)\par
+            \{\par
+                String DosyaYolu = file.FileName;\par
+                //dosyan\f2\u305?n yoluyla beraber gelmesi i\f1\'e7in\par
+\par
+                String DosyaAdi = file.SafeFileName;\par
+                //sadece dosya adi almak i\'e7in \par
+\par
+                //  String DsoyaAdi = file.SafeFileNames;\par
+                //birden fazlaysa \f0\lang1055 Name\ul s\f1\lang1033\par
+\ulnone                 MessageBox.Show(DosyaYolu + "------" + DosyaAdi);\par
+\par
+                //pictureboxa atmak i\'e7in \par
+                pictureBox1.BackgroundImage = Image.FromFile(DosyaYolu);\par
+                // bu \f2\'baekilde de kullan\u305?l\u305?r \par
+                //pictureBox1.BackgroundImage = new Bitmap(DosyaYolu);\par
+\par
+            \}\par
+        \}\par
+\par
+        private void button2_Click(object sender, EventArgs e)\par
+        \{\par
+            //BUGUNUN TAR\u304?H\u304?NE +3 G\f1\'dcN EKLER\par
+            label1.Text = DateTime.Now.AddDays(3).ToString();\par
+            // label1.Text = DateTime.Now.Add();\par
+            //fonksiyonu ile y\f2\u305?l saat g\f1\'fcn saniye ms eklenebilir\par
+\par
+            label2.Text = DateTime.Today.Month.ToString();\par
+            //bugunun ay degerini getiri \par
+            //DateTime.Today.  ile ay y\f2\u305?l g\f1\'fcn saat dakika de\f2\u287?elerini alabiliriz\par
+\par
+            label2.Text = DateTime.Now.ToLongDateString();\par
+            //hangi g\f1\'fcnde oldu\f2\u287?unu da yazar\par
+            label2.Text = DateTime.Now.ToShortDateString();\par
+            //g\f1\'fcn olmadan sadece tarih\par
+            label2.Text = DateTime.Now.ToShortTimeString();\par
+            //saat:dakika\par
+            label2.Text = DateTime.Now.ToLongTimeString();\par
+            //saat:dakika:saniye\par
+        \}\par
+\par
+        private void button3_Click(object sender, EventArgs e)\par
+        \{\par
+\par
+            label3.Text = dateTimePicker1.Text.ToString();\par
+            // \'e7\f2\u305?kt\u305?: 18 ocak 2021 pazartesi\par
+            label4.Text = dateTimePicker1.Value.ToString();\par
+            // \f1\'e7\f2\u305?kt\u305?s\u305?: 18.01.2021 22:16:29\par
+            label5.Text = dateTimePicker1.Value.AddHours(5).ToString();\par
+\par
+\par
+            dateTimePicker1.MinDate = new DateTime(2020,1,1);\par
+            dateTimePicker1.MaxDate = new DateTime(2022, 12, 30);\par
+            //zaman tarihinin nereye kadar olmas\u305?n\u305? ayarlama\par
+\par
+            // kendi format ayarlama\par
+            dateTimePicker1.CustomFormat = "MMM dd, yyyy-dddd";\par
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;\par
+\par
+\par
+             //dateTimePicker1.ShowCheckBox = true;\par
+            //sol k\'baede se\f1\'e7me ya da kald\f2\u305?rma i\'balmei var \f0\lang1055 ve \f2\lang1033 manuel yazabilme\par
+           // dateTimePicker1.ShowUpDown = true;\par
+           \par
+        \}\par
+\par
+        private void button4_Click(object sender, EventArgs e)\par
+        \{\par
+            // monthcelender i\f1\'e7inde her y\f2\u305?l eklenecek belirtecler\par
+            monthCalendar1.AnnuallyBoldedDates = new System.DateTime[]\par
+            \{\par
+            new System.DateTime(2020,\f0\lang1055  \f2\lang1033 12,29,0,0,0,0),\par
+            new System.DateTime(2020, 12, 30, 0, 0, 0, 0)\f0\lang1055 ,\f2\lang1033\par
+            new System.DateTime(2020, \f0\lang1055  \f2\lang1033 5, 19, 0, 0, 0, 0)\par
+\par
+\par
+        \};\par
+\par
+            // monthcelender i\f1\'e7inde her ayl\f2\u305?k - eklenecek belirtecler\par
+            monthCalendar1.MonthlyBoldedDates = new System.DateTime[]\par
+            \{\par
+            new System.DateTime(2020,12,15,0,0,0,0),\par
+            new System.DateTime(2020, 12, 15, 0, 0, 0, 0),\par
+            new System.DateTime(2020, 5, 15, 0, 0, 0, 0)\par
+\par
+\par
+        \};\par
+\par
+            // monthcelender do\u287?rudan belirneleckler belirtecler\par
+            monthCalendar1.BoldedDates = new System.DateTime[]\par
+            \{\par
+                new System.DateTime(2020,12,29,0,0,0,0)\par
+         \par
+\par
+\par
+        \};\par
+\par
+\par
+            //haftan\u305?n g\f1\'fcn\'fcn\'fc belirleme\par
+            monthCalendar1.FirstDayOfWeek = System.Windows.Forms.Day.Monday;\par
+            \par
+\par
+            //tarih aral\f2\u305?\u287?\u305? belirleme\par
+            monthCalendar1.MaxDate= new DateTime(2022, 2, 1);\par
+            monthCalendar1.MinDate = new DateTime(2010, 2, 1);\par
+\par
+\par
+            //start ba\'balag\u305?\f1\'e7  end:biti\f2\'ba tarihi\par
+           label6.Text= monthCalendar1.SelectionRange.Start.ToShortDateString();\par
+\par
+        \}\par
+\par
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)\par
+        \{\par
+            MessageBox.Show("se\f1\'e7ilen tarih aral\f2\u305?\u287?\u305? :" +e.Start.ToShortDateString() + e.End.ToShortDateString());\par
+                //bu \'baekilde de tarihini alabiliriz\par
+        \}\par
+    \}\par
+\}\f0\lang1055\par
+***************************************************************************\par
+                                                               HAFTA12**************************************************************************\par
+using System;\par
+using System.Collections.Generic;\par
+using System.ComponentModel;\par
+using System.Data;\par
+using System.Drawing;\par
+using System.Linq;\par
+using System.Text;\par
+using System.Threading.Tasks;\par
+using System.Windows.Forms;\par
+\par
+namespace Hafta12\par
+\{\par
+    public partial class Form1 : Form\par
+    \{\par
+        public Form1()\par
+        \{\par
+            InitializeComponent();\par
+        \}\par
+\par
+    \par
+\par
+        \par
+\par
+        private void button1_Click(object sender, EventArgs e)\par
+        \{\par
+            TreeNode secilen;\par
+            secilen = treeView1.SelectedNode;\par
+\par
+               //hangi node se\f1\lang1033\'e7ili ise onu g\'f6sterir\par
+\par
+               if (radioButton1.Checked)\par
+               \{\par
+                   treeView1.Nodes.Add(textBox1.Text);\par
+\par
+                   //treeview yap\f2\u305?s\u305?na root node atama\par
+               \}\par
+\par
+               else\par
+               \{\par
+                   secilen.Nodes.Add(textBox1.Text);\par
+               \}\par
+            // treeView1.Nodes.Remove(secilen);\par
+            // se\f1\'e7ilne node siler\par
+            // treeView1.Nodes.RemoveAt(2);\par
+            //2.indisteki node siler\par
+        \}\par
+\par
+        private void button2_Click(object sender, EventArgs e)\par
+        \{\par
+            // treeView1.ExpandAll();\par
+            //tree viewdet\'fcm \'fcst katagorileri a\'e7\f2\u305?yor\par
+\par
+            // treeView1.Nodes.Clear();\par
+            //t\f1\'fcm nodelar\f2\u305? siler\par
+\par
+\par
+\par
+            try\par
+            \{\par
+                TreeNode secilen;\par
+                secilen = treeView1.SelectedNode;\par
+                if (secilen.Parent == null)\par
+                \{\par
+                    //parent yani \f0\lang1055 ana\f2\lang1033  katagori olup olmamas\u305? \par
+                    secilen.Parent.Nodes.Remove(secilen);\par
+                    //ana d\f1\'fc\f2\u287?\f1\'fcmse onu siler\par
+\par
+                \}\par
+\par
+                else\par
+                \{\par
+                    treeView1.Nodes.Remove(secilen);\par
+                    //alt d\'fc\f2\u287?\f1\'fcm\'fc siler\par
+                \}\par
+\par
+            \}\par
+            catch(Exception deneme)\par
+            \{\par
+                MessageBox.Show(deneme.Message);\par
+                throw;\par
+\par
+            \}\par
+\par
+\par
+         //try catch hata yakalama\par
+\par
+\par
+           \par
+           \par
+        \}\par
+\par
+        private void button3_Click(object sender, EventArgs e)\par
+        \{\par
+            try\par
+            \{\par
+                treeView1.Nodes.Add(textBox2.Text);\par
+            \}\par
+            catch(Exception)\par
+            \{\par
+                throw;\par
+            \}\par
+        \}\par
+\par
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)\par
+        \{\par
+            if (e.Node.GetNodeCount(true) > 0)\par
+                //node olup\f0\lang1055  \f1\lang1033 olmammas\f2\u305?n\u305? kontrol ediyor\par
+                return;\par
+            //node olup olmamas\u305?n\u305?nkontrol\f1\'fc\par
+\par
+\par
+                for(int i = 2; i < Convert.ToInt32(e.Node.Text) - 1; i++)\par
+                \{\par
+                    if (Convert.ToInt32(e.Node.Text) % i == 0)\par
+                        e.Node.Nodes.Add(i.ToString());\par
+                \}\par
+            \par
+        \}\par
+\par
+        private void button4_Click(object sender, EventArgs e)\par
+        \{\par
+            label3.Text = trackBar1.Value.ToString();\par
+            //trackbar \f0\lang1055 de\f2\u287?\f0 erini\f2\lang1033  al\u305?r\par
+\par
+            trackBar1.Minimum = 0;\par
+            trackBar1.Maximum = 100;\par
+            trackBar1.TickFrequency = 20;\par
+            //100 tic vr ama 20 de bir tik g\f1\'f6r\'fcns\'fcn\par
+            trackBar1.Orientation = Orientation.Horizontal;\par
+\f0\lang1055            //\f1\lang1033 Horizontal\f0\lang1055 :yatay\par
+           //vertical:  dikey\f1\lang1033\par
+            trackBar1.SmallChange = 2;\par
+            trackBar1.LargeChange = 5;\par
+\par
+        \}\par
+\par
+        private void trackBar1_Scroll(object sender, EventArgs e)\par
+        \{\par
+            label4.Text = trackBar1.Value.ToString();\par
+           \par
+\par
+            // git gel yapt\f2\u305?k\f1\'e7a labela de\f2\u287?eri yazma\par
+        \}\par
+\par
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)\par
+        \{\par
+            numericUpDown1.Minimum = 30;\par
+            numericUpDown1.Maximum = 100;\par
+           \par
+            numericUpDown1.Increment = 4;\par
+\f0\lang1055            // 4er 4er artar\f2\lang1033\par
+\par
+            label5.Text = numericUpDown1.Value.ToString();\par
+\par
+\par
+        \}\par
+\par
+        private void trackBar2_Scroll(object sender, EventArgs e)\par
+        \{\par
+            if (trackBar2.Value < 80)\par
+            \{\par
+                this.BackColor = Color.Red;\par
+\par
+            \}\par
+        \}\par
+    \}\par
+\}\f0\lang1055\par
+***************************************************************************\par
+                                                               HAFTA13**************************************************************************\par
+using System;\par
+using System.Collections.Generic;\par
+using System.ComponentModel;\par
+using System.Data;\par
+using System.Drawing;\par
+using System.Linq;\par
+using System.Text;\par
+using System.Threading.Tasks;\par
+using System.Windows.Forms;\par
+\par
+namespace Hafta13\par
+\{\par
+    public partial class Form1 : Form\par
+    \{\par
+        public Form1()\par
+        \{\par
+            InitializeComponent();\par
+        \}\par
+\par
+       \par
+\par
+        private void Form1_Load(object sender, EventArgs e)\par
+        \{\par
+            webBrowser1.Navigate("{{\field{\*\fldinst{HYPERLINK www.gokhanaltan.com }}{\fldrslt{www.gokhanaltan.com\ul0\cf0}}}}\f0\fs22 ");\par
+\par
+        \}\par
+        private void git_Click(object sender, EventArgs e)\par
+        \{\par
+            webBrowser1.Navigate(comboBox1.Text);\par
+        \}\par
+\par
+        private void button1_Click(object sender, EventArgs e)\par
+        \{\par
+            if (webBrowser1.CanGoBack)\par
+            \{  \par
+                webBrowser1.GoBack();\par
+\par
+            \}\par
+           \par
+\par
+        \}\par
+\par
+        private void button2_Click(object sender, EventArgs e)\par
+        \{\par
+            if (webBrowser1.CanGoForward)\par
+            \{\par
+                webBrowser1.GoForward();\par
+\par
+            \}\par
+\par
+        \}\par
+\par
+        private void button5_Click(object sender, EventArgs e)\par
+        \{\par
+           \par
+            webBrowser1.GoHome();\par
+\par
+        \}\par
+\par
+        private void arti_Click(object sender, EventArgs e)\par
+        \{\par
+            AddSekme(comboBox1.Text);\par
+        \}\par
+\par
+        public void AddSekme(String adres)\par
+        \{\par
+            TabPage tp = new TabPage();\par
+            tp.Text = "yeni sekme";\par
+            tabControl1.TabPages.Add(tp);\par
+            WebBrowser browser = new WebBrowser();\par
+            browser.Navigate(adres);\par
+\par
+            browser.Dock = DockStyle.Fill;\par
+            //yeni sekmedeki\f2  browserin boyutuyla u\u287?ra\'bam\f0 am\f2 ak i\f1\lang1033\'e7in\par
+            tp.Controls.Add(browser);\par
+\par
+            tabControl1.SelectedTab = tp;\par
+            //yeni sekme a\'e7t\f2\u305?\u287?\u305?m\u305?z zaman belirlenen sekme a\f1\'e7\f2\u305?ls\u305?n\par
+\par
+\par
+\par
+\par
+\par
+        \}\par
+\par
+        private void kapatToolStripMenuItem_Click(object sender, EventArgs e)\par
+        \{\par
+            TabPage secilen = new TabPage();\par
+            secilen = tabControl1.SelectedTab;\par
+            tabControl1.TabPages.Remove(secilen);\par
+\par
+            //sekmeyi kapatmak i\f1\'e7in i\'e7in contex menu ekleme yani sa\f2\u287?a t\u305?klan\u305?nca \par
+            //tabcontext menunuye contex menuyu ekl\par
+        \}\par
+\par
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)\par
+        \{\par
+            if (!comboBox1.Items.Contains(webBrowser1.Url))\par
+            \{ \par
+                comboBox1.Items.Add(webBrowser1.Url);\par
+                comboBox1.AutoCompleteCustomSource.Add(webBrowser1.Url.ToString());\par
+                //daha \f1\'f6nce ziyaret etti\f2\u287?klerimiz otomatik tamamlamay\u305? sa\u287?lar\par
+\par
+            \}\par
+            \par
+\par
+            \par
+\par
+        \}\par
+\par
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)\par
+        \{\par
+            webBrowser1.Navigate(comboBox1.Text);\par
+            //ge\f1\'e7mi\f2\'batekilerden se\f1\'e7ip ona gitmek i\'e7in\par
+        \}\par
+\par
+        private void button4_Click(object sender, EventArgs e)\par
+        \{\par
+             //arama yapma\par
+            // webBrowser1.Navigate("{{\field{\*\fldinst{HYPERLINK http://www.google.com/search?q= }}{\fldrslt{http://www.google.com/search?q=\ul0\cf0}}}}\f1\fs22 " +textBox1.Text);\par
+\par
+             // MessageBox.Show(  webBrowser1.Document.Body.InnerHtml.ToString());\par
+            //html kodlar\f2\u305?n\u305? alamak css vb ba\'baka \'baeyleride bu \'baekilde alabiliriz\par
+\par
+\par
+\par
+        \}\par
+    \}\par
+\}\f0\lang1055\par
+***************************************************************************\par
+                                                               HAFTA14**************************************************************************\par
+using System;\par
+using System.Collections.Generic;\par
+using System.ComponentModel;\par
+using System.Drawing;\par
+using System.Linq;\par
+using System.Text;\par
+using System.Threading.Tasks;\par
+using System.Windows.Forms;\par
+\par
+namespace Hafta14\par
+\{\par
+    class ISTEButton:Button\par
+    \{\par
+        public ISTEButton( IContainer container )\par
+        \{\par
+            container.Add(this);\par
+        \}\par
+\par
+        Point lokasyon;\par
+        public String degiskenPublic;\par
+        private String degiskenPrivate;\par
+\par
+        \par
+            protected override void OnMouseDown(MouseEventArgs e)\par
+        \{\par
+            if (e.Button == MouseButtons.Left)\par
+            \{\par
+                lokasyon = e.Location;\par
+\par
+            \}\par
+            this.Size = new Size(this.Size.Width + 15, this.Size.Height + 15);\par
+            this.BackColor = Color.Green;\par
+\par
+            base.OnMouseDown(e);\par
+        \}\par
+\par
+        protected override void OnMouseMove(MouseEventArgs e)\par
+        \{\par
+            //sola bas\f2\u305?ld\u305?ysa butonu de\u287?i\'batirme\par
+            if (e.Button == MouseButtons.Left)\par
+            \{\par
+                this.Left += e.X - lokasyon.X;\par
+                this.Top += e.Y - lokasyon.Y;\par
+            \}\par
+            base.OnMouseMove(e);\par
+        \}\par
+\par
+        protected override void OnMouseUp(MouseEventArgs e)\par
+        \{\par
+            if (e.Button == MouseButtons.Left)\par
+            \{\par
+                this.Size = new Size(this.Size.Width -15, this.Size.Height - 15);\par
+                this.BackColor = Color.Transparent;\par
+            \}\par
+            else if (e.Button == MouseButtons.Right)\par
+            \{\par
+                ContextMenu deneme = new ContextMenu();\par
+                //  MenuItem menu\u305?tem = new MenuItem();\par
+                //menu\u305?tem.Text = "kapat";\par
+                //menu\u305?tem.Click += this.mmethod1;\par
+                //deneme.MenuItems.Add(menu\u305?tem);\par
+                deneme.MenuItems.Add("kapat", new EventHandler(this.mmethod1));\par
+                deneme.MenuItems.Add("program\u305? kapat", new EventHandler(this.mmethod2));\par
+                this.ContextMenu = deneme;\par
+\par
+            \}\par
+            base.OnMouseUp(e);\par
+        \}\par
+\par
+        public void mmethod1(object sende,EventArgs e)\par
+        \{\par
+            this.Dispose();\par
+            MessageBox.Show(this.Name + "isimli bile\'baen silindi");\par
+            \par
+        \}\par
+        public void mmethod2(object sende, EventArgs e)\par
+        \{\par
+            Application.Exit();\par
+\par
+        \}\par
+\par
+    \}\par
+\}\par
+\f0 **************************************************************\par
+
+\pard\f3\lang1033 using System;\par
+using System.Collections.Generic;\par
+using System.ComponentModel;\par
+using System.Data;\par
+using System.Drawing;\par
+using System.Linq;\par
+using System.Text;\par
+using System.Threading.Tasks;\par
+using System.Windows.Forms;\par
+\par
+namespace Hafta14\par
+\{\par
+    public partial class Form1 : Form\par
+    \{\par
+        public Form1()\par
+        \{\par
+            InitializeComponent();\par
+        \}\par
+\par
+        private void Form1_Load(object sender, EventArgs e)\par
+        \{\par
+            \f4\u305?steButton1.degiskenPublic = "iste";\par
+        \}\par
+    \}\par
+\}\par
+
+\pard\sa200\sl276\slmult1\f0\lang1055\par
+\par
+\par
+\par
+\par
+\par
+\f1\lang31\par
+}
+ 
